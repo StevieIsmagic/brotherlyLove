@@ -1,3 +1,3 @@
 # Stevie's First React Native App
 
-## Built for brothers to better connect in the real world.
+## For SigEp Brothers to Better Connect in the Real World.
