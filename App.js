@@ -31,19 +31,10 @@ export default class App extends React.Component {
     ));
     return (
       <View style={styles.container}>  
-        <View style={styles.inputContainer}>
-          <TextInput
-          style={styles.placeInput}
-          placeholder="Where Ya At?"
-          value={this.state.placeName}
-          onChangeText={this.placeNameChangedHandler}
-          />
-          <Button 
-            style={styles.placeButton}
-            title="ADD"
-            onPress={this.placeSubmitHandler}
-          />
-        </View>
+        <TextInput 
+          submitHandler={this.placeSubmitHandler} 
+          changedHandler={this.placeNameChangedHandler}
+        />
         <View style={styles.listContainer}>
           {placesOutput}
         </View>
