@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import PlaceInput from './src/components/PlaceInput/PlaceInput.js';
 import PlaceList from './src/components/PlaceList/PlaceList.js';
+import placeImage from './src/assets/Heart.jpg';
 
 export default class App extends React.Component {
   state = {
@@ -12,7 +13,13 @@ export default class App extends React.Component {
   placeAddedHandler = (placeName) => {
     this.setState(prevState => {
       return {
-        places: prevState.places.concat({key: Math.random(), value: placeName})
+        places: prevState.places.concat({
+          key: Math.random(), 
+          name: placeName,
+          image: {
+            uri: 'https://i.pinimg.com/236x/d3/61/cc/d361cc194b7cd8309d373cac8b8c54fe--fraternity-gifts-greek-crafts.jpg'
+          }
+        })
       }
     })
   }
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 25,
-    backgroundColor: 'grey',
+    backgroundColor: '#BCF5E9',
     alignItems: 'center',
     justifyContent: 'flex-start',
   }
