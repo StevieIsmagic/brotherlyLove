@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCViewController.m \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCViewController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCNavigationController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCTabBarController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/MMDrawerController/MMDrawerController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/RCCDrawerProtocol.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/RCCTheSideBarManagerViewController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/TheSidebarController.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCDrawerController/TheSidebarController/Animations/SidebarAnimation.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCManager.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCExternalViewControllerProtocol.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/Helpers/RCTHelpers.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/Helpers/RCCTitleViewHelper.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native-navigation/ios/RCCCustomTitleView.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootViewDelegate.h

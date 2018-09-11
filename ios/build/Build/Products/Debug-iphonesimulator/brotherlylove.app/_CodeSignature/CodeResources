@@ -51,7 +51,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fmTMZZrnOLc3HZH3iHfbBqPw5DE=
+		/6WVrlxKY+2qT+SSikoEmGGaWfc=
+		</data>
+		<key>Ionicons.ttf</key>
+		<data>
+		mRu3+slwnNWNo3kBdw79RwPFQu0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -63,7 +67,7 @@
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Resources/DWARF/brotherlyloveTests</key>
 		<data>
-		AAAByCrumxsG14B0yHg0glZMWNI=
+		Rtt6S6GPfNivct+BWIbPV7bOO68=
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
 		<data>
@@ -75,7 +79,7 @@
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest/brotherlyloveTests</key>
 		<data>
-		T0V1EBFCoXiLSz9wxG+Whp3ARRw=
+		6WzzscaEYCVSY6OQu4abk7kdpT8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -192,6 +196,17 @@
 			2hnwNPgdaewT28DbTqe0Gpaccdc2akBF8IjnGtISc58=
 			</data>
 		</dict>
+		<key>Ionicons.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mRu3+slwnNWNo3kBdw79RwPFQu0=
+			</data>
+			<key>hash2</key>
+			<data>
+			INFzvLYFHQlzvgymqi+08npbKQ2AEGyyxWfI/cdyxxE=
+			</data>
+		</dict>
 		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -207,11 +222,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AAAByCrumxsG14B0yHg0glZMWNI=
+			Rtt6S6GPfNivct+BWIbPV7bOO68=
 			</data>
 			<key>hash2</key>
 			<data>
-			8kwNz1hMNr0HwU24OMHwjuCaonZXJt2R5hqlBjXqr6U=
+			oeXL+hVvxvwk2PGuYmbxt13YhVZHfu/XEPulfdYnGiE=
 			</data>
 		</dict>
 		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
@@ -240,11 +255,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T0V1EBFCoXiLSz9wxG+Whp3ARRw=
+			6WzzscaEYCVSY6OQu4abk7kdpT8=
 			</data>
 			<key>hash2</key>
 			<data>
-			4hwBuDtNTg6KUsAyXWQRvt/r/2+ZhmPiyBOsoZWz8aU=
+			yAIVck0k5ub0V76xEjCsTI4n4axCkCh74eYrOIbo24Y=
 			</data>
 		</dict>
 	</dict>
