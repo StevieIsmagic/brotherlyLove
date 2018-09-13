@@ -12,6 +12,11 @@ const startTabs = () => {
         screen: 'brotherlylove.SharePlaceScreen',
         label: 'Share Place',
         title: 'Share Place'
+      },
+      {
+        screen: 'brotherlylove.AnnouncementsScreen',
+        label: 'Announcements',
+        title: 'Announcements'
       }
     ]
   });
