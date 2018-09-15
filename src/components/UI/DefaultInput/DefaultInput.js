@@ -3,9 +3,9 @@ import { TextInput, StyleSheet } from 'react-native';
 
 const defaultInput = (props) => (
   <TextInput 
-    style={styles.input} 
     underlineColorAndroid="transparent" 
     {...props}
+    style={[styles.input, props.style]} 
   />
 );
 
@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
       width: '100%',
       borderWidth: 1,
       borderColor: '#0D876D',
+      borderRadius: 20,
       padding: 10,
       margin: 10
     }
