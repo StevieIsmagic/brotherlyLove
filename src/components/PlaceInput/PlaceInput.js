@@ -24,16 +24,16 @@ class PlaceInput extends Component {
     return (
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="Where Ya At?"
+          placeholder="Where Ya At Brother?"
           value={this.state.placeName}
           style={styles.placeInput}
           onChangeText={this.placeNameChangedHandler}
-          />
+        />
         <Button 
           title="ADD"
           style={styles.placeButton}
           onPress={this.placeSubmitHandler}
-          />
+        />
       </View>
       )
     }

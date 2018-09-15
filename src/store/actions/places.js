@@ -11,6 +11,9 @@ export const deletePlace = () => {
     type: DELETE_PLACE
   };
 };
+
+// These two actions may not be needed
+// We will use a different approach
 export const selectPlace = (key) => {
   return {
     type: SELECT_PLACE,
