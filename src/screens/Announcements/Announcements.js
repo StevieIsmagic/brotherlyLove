@@ -23,6 +23,12 @@ class AnnouncementsScreen extends Component {
     return (
       <View>
         <Text>Announcements Screen ! :)</Text>
+        <Text>
+          Think of advertizing opportunities for brothers and their personal initiatives. 
+          For example, right now a FlNu initiative is trying to raise money.
+          Maybe create a directory of brother owned establishments.
+          How can we better leverage the SigEp Community?
+        </Text>
       </View>
     )
   }
