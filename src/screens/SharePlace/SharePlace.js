@@ -37,9 +37,9 @@ class SharePlaceScreen extends Component {
     });
   }
 
-  placeAddedHandler = placeName => {
+  placeAddedHandler = () => {
     if (this.state.placeName.trim() !== '') {
-      this.props.onAddPlace(placeName)
+      this.props.onAddPlace(this.state.placeName)
     }
   }
 
@@ -58,7 +58,9 @@ class SharePlaceScreen extends Component {
           />
           <View style={styles.button}>
             <Button 
-              title='Share the Place!' onPress={() => alert('You Pushed the Button! :)')}/>
+              title='Share the Place!' 
+              onPress={this.placeAddedHandler}
+            />
           </View>
         </View>
       </ScrollView>
