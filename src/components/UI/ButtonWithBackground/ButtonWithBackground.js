@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 5,
     borderRadius: 15,
-    borderWidth: 4,
-    borderColor: 'red',
+    borderWidth: 2,
+    borderColor: '#b9e5d3',
   },
   text: {
     color: 'white'
