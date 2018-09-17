@@ -1,3 +1,3 @@
-# Stevie's First React Native App
+# Networking Tool
 
-## For SigEp Brothers to Better Connect in the Real World.
+## For SigEp Brothers to Better Forge Real World Connections.
