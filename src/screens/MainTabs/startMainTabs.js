@@ -57,11 +57,19 @@ const startTabs = () => {
           }
         }
       ],
+      tabsStyle: {
+        // iOS styling
+        tabBarSelectedButtonColor: '#53c294'
+      },
       drawer: {
         left: {
           screen: 'brotherlylove.SideDrawer',
 
         }
+      },
+      appStyle: {
+        //android styling
+        tabBarSelectedButtonColor: '#53c294'
       }
     });
   })

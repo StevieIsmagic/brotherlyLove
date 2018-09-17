@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Button, StyleSheet, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import { addPlace } from '../../store/actions/index'; 
@@ -10,6 +10,11 @@ import PickImage from '../../components/PickImage/PickImage';
 import PickLocation from '../../components/PickLocation/PickLocation';
 
 class SharePlaceScreen extends Component {
+  // style top left hamburger nav button
+  static navigatorStyle = {
+    navBarButtonColor: '#53c294'
+  }
+
   state = {
     placeName: ''
   };
