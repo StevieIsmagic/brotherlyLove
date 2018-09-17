@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import UserLegend from './UserLegend';
 
 class SideDrawer extends Component {
   render() {
@@ -9,15 +10,18 @@ class SideDrawer extends Component {
       <View 
         style={[ 
           styles.container, 
-          { width: Dimensions.get('window').width * 0.8} 
+            { width: Dimensions.get('window').width * 0.8} 
         ]}
       >
-        <TouchableOpacity>
-          <View style={styles.drawerItem}>
-            <Icon name={Platform.OS === 'android' ? 'md-log-out' : 'ios-log-out'} size={30} color='#aaa' style={styles.drawerItemIcon} />
-            <Text> Sign Out </Text>
-          </View>
-        </TouchableOpacity>
+        <View>
+          <TouchableOpacity>
+            <View style={styles.drawerItem}>
+              <Icon name={Platform.OS === 'android' ? 'md-log-out' : 'ios-log-out'} size={30} color='#aaa' style={styles.drawerItemIcon} />
+              <Text> Sign Out </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <UserLegend />
       </View>
     )
   }
