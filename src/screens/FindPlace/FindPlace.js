@@ -6,7 +6,7 @@ import PlaceList from '../../components/PlaceList/PlaceList';
 class FindPlaceScreen extends Component {
   // style top left hamburger nav button
   static navigatorStyle = {
-    navBarButtonColor: '#53c294'
+    navBarButtonColor: '#f6b12d'
   }
 
   state = {
@@ -125,13 +125,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   searchButton: {
-    borderColor: '#53c294',
-    borderWidth: 3,
+    borderColor: 'black',
+    backgroundColor: '#f6b12d',
+    borderWidth: 1,
     borderRadius: 50,
     padding: 20
   },
   searchButtonText: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 26
   }

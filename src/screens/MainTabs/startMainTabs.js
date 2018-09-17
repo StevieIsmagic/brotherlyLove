@@ -59,12 +59,15 @@ const startTabs = () => {
       ],
       tabsStyle: {
         // iOS styling
-        tabBarSelectedTextColor: 'black',
-        tabBarSelectedButtonColor: '#53c294'
+        tabBarSelectedTextColor: 'white',
+        tabBarSelectedButtonColor: '#f6b12d',
+        tabBarBackgroundColor: 'black'
       },
       appStyle: {
         //android styling
-        tabBarSelectedButtonColor: '#53c294'
+        tabBarSelectedTextColor: 'white',
+        tabBarSelectedButtonColor: '#f6b12d',
+        tabBarBackgroundColor: 'black'
       },
       drawer: {
         left: {

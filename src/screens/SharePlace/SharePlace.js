@@ -12,7 +12,7 @@ import PickLocation from '../../components/PickLocation/PickLocation';
 class SharePlaceScreen extends Component {
   // style top left hamburger nav button
   static navigatorStyle = {
-    navBarButtonColor: '#53c294'
+    navBarButtonColor: '#f6b12d'
   }
 
   state = {

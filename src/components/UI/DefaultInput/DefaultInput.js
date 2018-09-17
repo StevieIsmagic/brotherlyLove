@@ -12,8 +12,8 @@ const defaultInput = (props) => (
 const styles = StyleSheet.create({
     input: {
       width: '100%',
-      borderWidth: 1,
-      borderColor: '#53c294',
+      borderWidth: 0.5,
+      borderColor: 'black',
       borderRadius: 5,
       padding: 10,
       marginTop: 8,
