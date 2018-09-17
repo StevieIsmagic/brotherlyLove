@@ -29,7 +29,7 @@ const startTabs = () => {
         {
           screen: 'brotherlylove.SharePlaceScreen',
           label: 'Share Place',
-          title: 'Share Your Location w/ Brothers',
+          title: 'Share Your Location',
           icon: sources[1],
           navigatorButtons: {
             leftButtons: [
@@ -59,6 +59,11 @@ const startTabs = () => {
       ],
       tabsStyle: {
         // iOS styling
+        tabBarSelectedTextColor: 'black',
+        tabBarSelectedButtonColor: '#53c294'
+      },
+      appStyle: {
+        //android styling
         tabBarSelectedButtonColor: '#53c294'
       },
       drawer: {
@@ -67,10 +72,6 @@ const startTabs = () => {
 
         }
       },
-      appStyle: {
-        //android styling
-        tabBarSelectedButtonColor: '#53c294'
-      }
     });
   })
 }
