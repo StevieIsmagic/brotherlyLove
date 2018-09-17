@@ -1,4 +1,4 @@
-const validate = (val, rules) => {
+const validate = (val, rules, connectedValue) => {
   let isValid = true;
   for (let rule in rules) {
     switch (rule) {
@@ -7,7 +7,7 @@ const validate = (val, rules) => {
       case 'minLength':
         isValid = isValid && minLengthValidator(val, rules[rule]);
       case 'equalTo':
-        isValid = isValid && equalToValidator(val, rules[rule]);
+        isValid = isValid && equalToValidator(val, connectedValue[rule]);
       default:
         isValid = true;
     }
