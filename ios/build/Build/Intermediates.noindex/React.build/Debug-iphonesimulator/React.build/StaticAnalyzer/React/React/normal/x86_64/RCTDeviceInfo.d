@@ -11,5 +11,4 @@ dependencies: \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Modules/RCTAccessibilityManager.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/UIUtils/RCTUIUtils.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTUtils.h

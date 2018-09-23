@@ -28,7 +28,5 @@ dependencies: \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTRootView.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTViewManager.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/UIView+React.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Modules/RCTUIManagerUtils.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/UIView+Private.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTRefreshControl.h

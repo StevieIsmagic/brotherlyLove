@@ -396,6 +396,4 @@ dependencies: \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Profiler/RCTProfile.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBigString.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/RAMBundleRegistry.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSModulesUnbundle.h
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h

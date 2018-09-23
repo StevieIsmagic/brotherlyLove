@@ -25,7 +25,6 @@ dependencies: \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTComponent.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/SafeAreaView/RCTSafeAreaShadowView.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTShadowView.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTLayout.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Base/RCTRootView.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/SafeAreaView/RCTSafeAreaView.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/Views/RCTView.h \

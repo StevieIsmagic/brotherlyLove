@@ -357,4 +357,5 @@ dependencies: \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Math.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/../ReactCommon/cxxreact/JSModulesUnbundle.h \
   /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/noncopyable.h \
-  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Memory.h
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Memory.h \
+  /Users/Stevie/Desktop/DESKTOP/LambdaSchool/personal_practice/brotherlylove/node_modules/react-native/ReactCommon/cxxreact/oss-compat-util.h
