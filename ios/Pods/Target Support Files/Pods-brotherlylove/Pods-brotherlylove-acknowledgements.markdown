@@ -514,7 +514,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-## boost
+## boost-for-react-native
 
 Boost Software License - Version 1.0 - August 17th, 2003
 

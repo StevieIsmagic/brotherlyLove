@@ -5,8 +5,8 @@ import MapView from 'react-native-maps'
 class PickLocation extends Component {
   state = {
     focusedLocation: {
-      latitude: 38.0,
-      longitude: -122.4,
+      latitude: 37.7900352,
+      longitude: -122.4013726,
       latitudeDelta: 0.0122,
       longitudeDelta: 
         Dimensions.get('window').width / 
@@ -20,6 +20,7 @@ class PickLocation extends Component {
       <View style={styles.container}>
         
          <MapView 
+          // provider={PROVIDER_GOOGLE}
           initialRegion={this.state.focusedLocation}
           style={styles.map}
          />
