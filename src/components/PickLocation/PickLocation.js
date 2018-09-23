@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Button, StyleSheet, Dimensions } from 'react-native';
+import { View, Button, StyleSheet, Dimensions, Image } from 'react-native';
 import MapView from 'react-native-maps'
+import SigEpHeart from '../../assets/Heart.jpg'; 
 
 class PickLocation extends Component {
   state = {
@@ -33,7 +34,15 @@ class PickLocation extends Component {
     let marker = null;
 
     if (this.state.locationChosen) {
-      marker = <MapView.Marker coordinate={this.state.focusedLocation} />
+      marker = 
+        <MapView.Marker 
+          coordinate={this.state.focusedLocation}
+        > 
+          <Image 
+            source={SigEpHeart}  
+            style={styles.marker}
+          />
+        </MapView.Marker>
     }
 
     return (
@@ -69,6 +78,10 @@ const styles = StyleSheet.create({
   button: {
     margin: 8
   },
+  marker: {
+    height: 45,
+    width: 45
+  }
 });
 
 export default PickLocation;
