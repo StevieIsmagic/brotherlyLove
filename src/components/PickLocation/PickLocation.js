@@ -6,8 +6,8 @@ import SigEpHeart from '../../assets/Heart.jpg';
 class PickLocation extends Component {
   state = {
     focusedLocation: {
-      latitude: 37.7900352,
-      longitude: -122.4013726,
+      latitude: 25.96,
+      longitude: -80.238892,
       latitudeDelta: 0.0122,
       longitudeDelta: 
         Dimensions.get('window').width / 
@@ -31,7 +31,11 @@ class PickLocation extends Component {
           longitude: coordinates.longitude
         },
         locationChosen: true
-      }
+      };
+    });
+    this.props.onLocationPick({
+      latitude: coordinates.latitude,
+      longitude: coordinates.longitude
     })
   }
 

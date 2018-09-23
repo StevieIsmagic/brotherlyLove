@@ -20,7 +20,8 @@ const reducer = (state = initialState, action) => {
           name: action.placeName,
           image: {
             uri: 'https://i.pinimg.com/236x/d3/61/cc/d361cc194b7cd8309d373cac8b8c54fe--fraternity-gifts-greek-crafts.jpg'
-          }
+          },
+          location: action.location
         })
       };
     case DELETE_PLACE:
