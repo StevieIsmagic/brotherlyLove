@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		kFjlnScF39/arFxolcvaxWi6iu0=
+		B2e7i0Y9/uQUFbVeCo7jmeOh09c=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -721,7 +721,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dv8oVTH2HzgTR5EjxKuRIpSTtfg=
+		Cz6/qn/WMyKPlUcgJ5//cFWv7j4=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -737,7 +737,7 @@
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Resources/DWARF/brotherlyloveTests</key>
 		<data>
-		9sfyyrlHML9s2IcFaqyIosEf78Q=
+		l/7mBmN4d2FF87I+RvV+2xitfkQ=
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
 		<data>
@@ -749,7 +749,7 @@
 		</data>
 		<key>PlugIns/brotherlyloveTests.xctest/brotherlyloveTests</key>
 		<data>
-		3wMCRVYzakW5xmhwewNT5evY7HM=
+		jNBFWg3JUqrtJMUhj6Sce7oqRHM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -758,11 +758,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kFjlnScF39/arFxolcvaxWi6iu0=
+			B2e7i0Y9/uQUFbVeCo7jmeOh09c=
 			</data>
 			<key>hash2</key>
 			<data>
-			a/CPp+OVqXTqcHG1/7bww2H16t1eSluicThfMgSss0c=
+			fOObR0GsF1o6gV3oZz4ID0a2qMNb4GSUCNP9D57qOPY=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -2194,11 +2194,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9sfyyrlHML9s2IcFaqyIosEf78Q=
+			l/7mBmN4d2FF87I+RvV+2xitfkQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qaoj/xhpS73C9hOPKiiOhuGkKmMAnkGn5YU7ocWfrLk=
+			pcJXeWXZaBTmZn5o+KL/RvVLkCNc4Pp7UjKZCy6Yr+o=
 			</data>
 		</dict>
 		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
@@ -2227,11 +2227,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3wMCRVYzakW5xmhwewNT5evY7HM=
+			jNBFWg3JUqrtJMUhj6Sce7oqRHM=
 			</data>
 			<key>hash2</key>
 			<data>
-			n9uqPjskOVp1Z8c+iih4tZrwwoPDwIcMZVXjIn5lZhQ=
+			bn+AGs/t43dP8MQNns0RqDPqzGqEwXdTu1f9FKkGe9Q=
 			</data>
 		</dict>
 	</dict>
