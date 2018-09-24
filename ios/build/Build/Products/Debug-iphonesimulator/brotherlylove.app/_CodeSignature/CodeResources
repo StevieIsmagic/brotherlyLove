@@ -6,48 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		B2e7i0Y9/uQUFbVeCo7jmeOh09c=
-		</data>
-		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
-		<data>
-		PM04ohL+tpX8HYsmZndzNiahogM=
-		</data>
-		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
-		<data>
-		yVEF+IAFxPMrETjk62TYUsSZZoY=
-		</data>
-		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
-		<data>
-		zoD3Qa8gxI+Cn8eWli9Qhwj3hO0=
-		</data>
-		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
-		<data>
-		AKh1zJiXarm2j6t4HiBBfLajCzk=
-		</data>
-		<key>Frameworks/XCTest.framework/Info.plist</key>
-		<data>
-		THfQZgzkqYfCF+1a6Qiiyg4PBvk=
-		</data>
-		<key>Frameworks/XCTest.framework/XCTest</key>
-		<data>
-		kcj25XRrQvP/qx+D4sgQlfuUVpI=
-		</data>
-		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
-		<data>
-		3CgG/k5wQrc9AU6lVjrD6VTdHUo=
-		</data>
-		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TuBj57ZP6zBqcL9HttO2Rucaw9E=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Frameworks/XCTest.framework/version.plist</key>
-		<data>
-		4NEkyhJ9SrLJFKYhtHIBA6JBUFk=
+		nVtcgI/VxrE+jzKecGZ5JS9Iy3I=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -731,26 +690,6 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
-		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Info.plist</key>
-		<data>
-		rn+u/T8/g2uk648AeJl/5JNG7Uw=
-		</data>
-		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Resources/DWARF/brotherlyloveTests</key>
-		<data>
-		l/7mBmN4d2FF87I+RvV+2xitfkQ=
-		</data>
-		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
-		<data>
-		Uy6NE4SmJU528hnrO41uhS/hhWE=
-		</data>
-		<key>PlugIns/brotherlyloveTests.xctest/_CodeSignature/CodeResources</key>
-		<data>
-		KZCcrqKlKdiz922Q9/IPuepAgHE=
-		</data>
-		<key>PlugIns/brotherlyloveTests.xctest/brotherlyloveTests</key>
-		<data>
-		jNBFWg3JUqrtJMUhj6Sce7oqRHM=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -758,112 +697,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B2e7i0Y9/uQUFbVeCo7jmeOh09c=
+			nVtcgI/VxrE+jzKecGZ5JS9Iy3I=
 			</data>
 			<key>hash2</key>
 			<data>
-			fOObR0GsF1o6gV3oZz4ID0a2qMNb4GSUCNP9D57qOPY=
-			</data>
-		</dict>
-		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PM04ohL+tpX8HYsmZndzNiahogM=
-			</data>
-			<key>hash2</key>
-			<data>
-			skWCjbSCq4Do0CfB9M9H/oIKb8E6u811RNZ3C4RCgr8=
-			</data>
-		</dict>
-		<key>Frameworks/IDEBundleInjection.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			yVEF+IAFxPMrETjk62TYUsSZZoY=
-			</data>
-			<key>hash2</key>
-			<data>
-			9CAwBh/gVNHbUVChmC57vhLKF/T8yHQUP8JfXzX4IrA=
-			</data>
-		</dict>
-		<key>Frameworks/IDEBundleInjection.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zoD3Qa8gxI+Cn8eWli9Qhwj3hO0=
-			</data>
-			<key>hash2</key>
-			<data>
-			NhL3FSmi+ubMNRzjMlAyyh6e9hsdJvc1F6dCLhXfQXo=
-			</data>
-		</dict>
-		<key>Frameworks/IDEBundleInjection.framework/version.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			AKh1zJiXarm2j6t4HiBBfLajCzk=
-			</data>
-			<key>hash2</key>
-			<data>
-			4ReRxHthIWbMqGoVvBSVgDBXj1VsdaAW3Ugx/lWXjnM=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			THfQZgzkqYfCF+1a6Qiiyg4PBvk=
-			</data>
-			<key>hash2</key>
-			<data>
-			rCvsePGwevZyhF3ZQyq8mLkMpOpOa2bePzPRXJ5zAdQ=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/XCTest</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kcj25XRrQvP/qx+D4sgQlfuUVpI=
-			</data>
-			<key>hash2</key>
-			<data>
-			9U8DN2XC2S+3i8hOw4JwkbJ5Umq/khonj/aFSTUu5dM=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3CgG/k5wQrc9AU6lVjrD6VTdHUo=
-			</data>
-			<key>hash2</key>
-			<data>
-			3510nfxvxFwFf3lY60q05h559sn/b/FiXKLJJnn5cHw=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TuBj57ZP6zBqcL9HttO2Rucaw9E=
-			</data>
-			<key>hash2</key>
-			<data>
-			89RGkjZaKuewYnjpzwhIswhqfrU8+pcEXqM/DHVrUmo=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Frameworks/XCTest.framework/version.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4NEkyhJ9SrLJFKYhtHIBA6JBUFk=
-			</data>
-			<key>hash2</key>
-			<data>
-			npuwVsQMT6N9VGE0YqH9a729MzPY+LnokIqdklNFhIs=
+			7dKkYtVwlCmne/r9Rd86YEAcvzRO/oYmp0BP2P7x3Ts=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -2177,61 +2015,6 @@
 			<key>hash2</key>
 			<data>
 			INFzvLYFHQlzvgymqi+08npbKQ2AEGyyxWfI/cdyxxE=
-			</data>
-		</dict>
-		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			rn+u/T8/g2uk648AeJl/5JNG7Uw=
-			</data>
-			<key>hash2</key>
-			<data>
-			62xjMk1e/8SKCUe5YhAm2zC6a32Lj7kigr00swDKBWY=
-			</data>
-		</dict>
-		<key>PlugIns/brotherlyloveTests.xctest.dSYM/Contents/Resources/DWARF/brotherlyloveTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			l/7mBmN4d2FF87I+RvV+2xitfkQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			pcJXeWXZaBTmZn5o+KL/RvVLkCNc4Pp7UjKZCy6Yr+o=
-			</data>
-		</dict>
-		<key>PlugIns/brotherlyloveTests.xctest/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Uy6NE4SmJU528hnrO41uhS/hhWE=
-			</data>
-			<key>hash2</key>
-			<data>
-			e28T1csbl9+7s2wQbv9FOoGaWhJ2QsP9jN3Kgl+I8qM=
-			</data>
-		</dict>
-		<key>PlugIns/brotherlyloveTests.xctest/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			KZCcrqKlKdiz922Q9/IPuepAgHE=
-			</data>
-			<key>hash2</key>
-			<data>
-			xzJIq2+5QxvET54WoRNNbn8BrUwSJP+SSgsuOwt3LXs=
-			</data>
-		</dict>
-		<key>PlugIns/brotherlyloveTests.xctest/brotherlyloveTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jNBFWg3JUqrtJMUhj6Sce7oqRHM=
-			</data>
-			<key>hash2</key>
-			<data>
-			bn+AGs/t43dP8MQNns0RqDPqzGqEwXdTu1f9FKkGe9Q=
 			</data>
 		</dict>
 	</dict>
