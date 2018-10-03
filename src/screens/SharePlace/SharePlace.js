@@ -76,7 +76,7 @@ class SharePlaceScreen extends Component {
   }
 
   locationPickedHandler = location => {
-    console.log('LocationPICKEDHANDLER IN SHAREPLACE', location);
+    console.log('LOCATIONPICKEDHANDLER IN SHAREPLACE', location);
     this.setState(prevState => {
       return {
         controls: {

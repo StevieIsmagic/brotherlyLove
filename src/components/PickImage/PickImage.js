@@ -1,17 +1,36 @@
 import React, { Component } from 'react';
 import { View, Image, Button, StyleSheet } from 'react-native';
+import ImagePicker from 'react-native-image-picker';
 
 import imagePlaceHolder from '../../assets/rylandHall.jpg';
 
 class PickImage extends Component {
+  state = {
+    pickedImage: null
+  }
+
+  pickedImageHandler = () => {
+    ImagePicker.showImagePicker({ title: "Pick an Image" }, res => {
+      if (res.didCancel) {
+        console.log("User cancelled.");
+      } else if (res.error) {
+        console.log("Error", res.error);
+      } else {
+        this.setState({
+          pickedImage: { uri: res.uri }
+        })
+      }
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.placeholder}>
-          <Image source={imagePlaceHolder} style={styles.previewImage} />
+          <Image source={this.state.pickedImage} style={styles.previewImage} />
         </View>
         <View style={styles.button}>
-          <Button title='Pick Image' onPress={() => alert('Image picked! :)')}/>
+          <Button title='Pick Image' onPress={this.pickedImageHandler}/>
         </View>
       </View>
     );
