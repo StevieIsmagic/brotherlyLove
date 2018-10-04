@@ -8,16 +8,31 @@ export const addPlace = (placeName, location, image) => {
       name: placeName,
       location: location
     };
-    fetch(FIREBASE_ADDPLACE, {
+
+    fetch("https://console.firebase.google.com/project/brotherlylove-1537321653039/overview", {
       method: "POST",
-      body: JSON.stringify(placeData)
+      body: JSON.stringify({
+        image: image.base64
+      })
     })
     .catch(err => console.log(err))
     .then(res => res.json())
     .then(parsedRes => {
-      console.log("PARSED RESPONSE", parsedRes);
+      console.log(parsedRes);
     });
-  };
+  }
+}
+
+  //   fetch(FIREBASE_ADDPLACE, {
+  //     method: "POST",
+  //     body: JSON.stringify(placeData)
+  //   })
+  //   .catch(err => console.log(err))
+  //   .then(res => res.json())
+  //   .then(parsedRes => {
+  //     console.log("PARSED RESPONSE", parsedRes);
+  //   });
+  // };
 
   // return {
   //   type: ADD_PLACE,
@@ -25,7 +40,7 @@ export const addPlace = (placeName, location, image) => {
   //   location: location,
   //   image: image
   // };
-};
+
 export const deletePlace = (key) => {
   return {
     type: DELETE_PLACE,
@@ -41,6 +56,7 @@ export const selectPlace = (key) => {
     placeKey: key
   };
 };
+
 export const deselectPlace = () => {
   return {
     type: DESELECT_PLACE

@@ -4,6 +4,8 @@
 
 .env
 
+functions/brotherlylove.json
+
 # Xcode
 #
 build/
