@@ -1,38 +1,43 @@
 import { ADD_PLACE, DELETE_PLACE, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
-import { FIREBASE_ADDPLACE } from 'react-native-dotenv';
+import { FIREBASE_ADDPLACE, FIREBASE_ADDIMAGE } from 'react-native-dotenv';
 
 // ACTION CREATORS > RETURN AN OBJECT
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
-    const placeData = {
-      name: placeName,
-      location: location
-    };
-
-    fetch("https://console.firebase.google.com/project/brotherlylove-1537321653039/overview", {
+    // Upload Image
+    fetch(FIREBASE_ADDIMAGE, {
       method: "POST",
       body: JSON.stringify({
         image: image.base64
       })
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log("Places Error: ", err))
+    .then(res => {
+      console.log("RESSSSSAAAA: ", res.json())
+      // res.json()
+      
+    })
+    .then(parsedRes => {
+      console.log("PARSED RES FIRST PROMISE: ", parsedRes);
+      //If initial POST is successful, post additional place properties
+      const placeData = {
+        name: placeName,
+        location: location,
+        image: parsedRes.imageUrl
+      };
+      return fetch(FIREBASE_ADDPLACE, {
+          method: "POST",
+          body: JSON.stringify(placeData)
+      })
+    })
+    .catch(err => console.log("SECOND PROMISE ERR: ", err))
     .then(res => res.json())
     .then(parsedRes => {
-      console.log(parsedRes);
+      console.log("PARSED RESPONSE: ", parsedRes);
     });
-  }
-}
+  };
+};
 
-  //   fetch(FIREBASE_ADDPLACE, {
-  //     method: "POST",
-  //     body: JSON.stringify(placeData)
-  //   })
-  //   .catch(err => console.log(err))
-  //   .then(res => res.json())
-  //   .then(parsedRes => {
-  //     console.log("PARSED RESPONSE", parsedRes);
-  //   });
-  // };
 
   // return {
   //   type: ADD_PLACE,

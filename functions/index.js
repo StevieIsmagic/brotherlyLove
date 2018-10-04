@@ -17,7 +17,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
   return cors(request, response, () => {
     const body = JSON.parse(request.body);
     fs.writeFileSync("/tmp/uploaded-image.jpg", body.image, "base64", err => {
-      console.log("Error", err);
+      console.log("Error 1: ", err);
       return response.status(500).json({ error: err });
     });
     const bucket = gcs.bucket("brotherlylove-1537321653039.appspot.com");
@@ -27,6 +27,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
       {
         uploadType: "media",
         destination: "/places/" + uuid + ".jpg",
+        resumable: false,
         metadata: {
           metadata: {
             contentType: "image/jpeg",
@@ -45,7 +46,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
             uuid
           });
         } else {
-          console.log(err);
+          console.log("Error 2: ", err);
           return response.status(500).json({ error: err });
         }
       });
