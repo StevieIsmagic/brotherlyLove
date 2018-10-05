@@ -11,30 +11,25 @@ export const addPlace = (placeName, location, image) => {
         image: image.base64
       })
     })
-    .catch(err => console.log("Places Error: ", err))
-    .then(res => {
-      console.log("RESSSSSAAAA: ", res.json())
-      res.json()
-    })
+    .catch(err => console.log("Places - First Fetch Error: ", err))
+    .then(res => res.json())
     .then(parsedRes => {
-      console.log("PARSED RES FIRST PROMISE: ", parsedRes);
-      //If initial POST is successful, post additional place properties
+      // If initial POST is successful, POST the additional place properties to Database
       const placeData = {
         name: placeName,
         location: location,
         image: parsedRes.imageUrl
       };
+      return fetch(FIREBASE_ADDPLACE, {
+        method: "POST",
+        body: JSON.stringify(placeData)
+      })
     })
-
-        // return fetch(FIREBASE_ADDPLACE, {
-        //     method: "POST",
-        //     body: JSON.stringify(placeData)
-        // })
-        // .catch(err => console.log("SECOND PROMISE ERR: ", err))
-        // .then(res => res.json())
-        // .then(parsedRes => {
-        //   console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
-        // });
+    .catch(err => console.log("Places - Second Fetch Error: ", err))
+    .then(res => res.json())
+    .then(parsedRes => {
+      console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
+    });
   };
 };
 
