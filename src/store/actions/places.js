@@ -1,9 +1,11 @@
 import { ADD_PLACE, DELETE_PLACE, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
 import { FIREBASE_ADDPLACE, FIREBASE_ADDIMAGE_FX } from 'react-native-dotenv';
+import { uiStartLoading, uiStopLoading } from './index';
 
 // ACTION CREATORS > RETURN AN OBJECT
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
+    dispatch(uiStartLoading())
     // Upload Image to Firebase Storage via Firebase f(x)
     fetch(FIREBASE_ADDIMAGE_FX, {
       method: "POST",
@@ -11,7 +13,10 @@ export const addPlace = (placeName, location, image) => {
         image: image.base64
       })
     })
-    .catch(err => console.log("Places - First Fetch Error: ", err))
+    .catch(err => {
+      console.log("Places - First Fetch Error: ", err);
+      dispatch(uiStopLoading());
+    })
     .then(res => res.json())
     .then(parsedRes => {
       // If initial POST is successful, POST the additional place properties to Database
@@ -25,10 +30,14 @@ export const addPlace = (placeName, location, image) => {
         body: JSON.stringify(placeData)
       })
     })
-    .catch(err => console.log("Places - Second Fetch Error: ", err))
+    .catch(err => {
+      console.log("Places - Second Fetch Error: ", err);
+      dispatch(uiStopLoading());
+    })
     .then(res => res.json())
     .then(parsedRes => {
       console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
+      dispatch(uiStopLoading());
     });
   };
 };
