@@ -68,7 +68,7 @@ export const getPlaces = () => {
           image: {
             uri: parsedRes[key].image
           },
-          id: key
+          key: key
         });
       }
       console.log("AFTER PLACES LIST: ", places);
