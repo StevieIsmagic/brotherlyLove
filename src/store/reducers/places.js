@@ -1,6 +1,6 @@
 import {
   SET_PLACES,
-  DELETE_PLACE,
+  REMOVE_PLACE,
   SELECT_PLACE,
   DESELECT_PLACE
 } from '../actions/actionTypes';
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         places: action.places
       };
-    case DELETE_PLACE:
+    case REMOVE_PLACE:
       return {
         ...state,
         places: state.places.filter(place => {

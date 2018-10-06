@@ -1,5 +1,5 @@
-import { SET_PLACES, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
-import { FIREBASE_PLACES_DB, FIREBASE_ADDIMAGE_FX } from 'react-native-dotenv';
+import { SET_PLACES, REMOVE_PLACE, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
+import { FIREBASE_PLACES_DB, FIREBASE_PLACES_DB_SPLICED, FIREBASE_ADDIMAGE_FX } from 'react-native-dotenv';
 import { uiStartLoading, uiStopLoading } from './index';
 
 /* 
@@ -71,7 +71,7 @@ export const getPlaces = () => {
           key: key
         });
       }
-      console.log("AFTER PLACES LIST: ", places);
+      console.log("getPlaces Action PLACES LIST: ", places);
       dispatch(setPlaces(places));
     })
   }
@@ -84,9 +84,34 @@ export const setPlaces = places => {
   };
 };
 
-export const deletePlace = (key) => {
+export const deletePlace = key => {
+  // dispatch allows us to run async code
+  const deleteID = FIREBASE_PLACES_DB_SPLICED + key + ".json";
+  return dispatch => {
+    /*
+      NOTE: dispatch(removePlace()) deletes place from redux store before the fetch(DELETE) call.
+      Consider what may happen if the client removal succeeds + server removal fails.
+      We will then have an out of sync frontend store. Maybe make copy of place and if catch
+      block is entered, add place back to store. 
+    */
+    dispatch(removePlace(key));
+    fetch(deleteID, {
+      method: "DELETE",
+    })
+    .catch(err => {
+      console.log("Error when deleting Place", err);
+      alert("Sorry, something went wrong =[ try again!");
+    })
+    .then(res => res.json())
+    .then(parsedRes => {
+      console.log("Successfully deleted from Firebase DB!", parsedRes);
+    });
+  };
+};
+
+export const removePlace = key => {
   return {
-    type: DELETE_PLACE,
+    type: REMOVE_PLACE,
     placeKey: key
   };
 };

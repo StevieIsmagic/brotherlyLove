@@ -23,6 +23,11 @@ class FindPlaceScreen extends Component {
 
   componentDidMount() {
     this.props.onLoadPlaces();
+    console.log("FIND PLACE AFTER CDM: ", this.state);
+  }
+
+  shouldComponentUpdate() {
+    return true;
   }
 
   onNavigatorEvent = event => {
