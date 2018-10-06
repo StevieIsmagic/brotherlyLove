@@ -6,7 +6,8 @@ import {
   Dimensions, 
   KeyboardAvoidingView, 
   Keyboard,
-  TouchableWithoutFeedback 
+  TouchableWithoutFeedback,
+  ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -126,6 +127,19 @@ class AuthScreen extends Component {
   render() {
     let headingText = null;
     let confirmPasswordControl = null;
+    let submitButtom = (
+      <ButtonWithBackground 
+        color='#f6b12d' 
+        onPress={this.loginHandler}
+        disabled={
+          (!this.state.controls.confirmPassword.valid && this.state.authMode === 'signup') || 
+          !this.state.controls.email.valid ||
+          !this.state.controls.password.valid
+        }
+      >
+        Submit
+      </ButtonWithBackground>
+    );
 
     if (this.state.viewMode === 'portrait') {
       headingText = (
@@ -157,6 +171,9 @@ class AuthScreen extends Component {
       );
     }
 
+    if (this.props.isLoading) {
+      submitButtom = <ActivityIndicator />;
+    }
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <KeyboardAvoidingView style={styles.container} behavior='padding'>
@@ -211,17 +228,7 @@ class AuthScreen extends Component {
               </View>
             </View>
           </TouchableWithoutFeedback>
-          <ButtonWithBackground 
-            color='#f6b12d' 
-            onPress={this.loginHandler}
-            disabled={
-              (!this.state.controls.confirmPassword.valid && this.state.authMode === 'signup') || 
-              !this.state.controls.email.valid ||
-              !this.state.controls.password.valid
-            }
-            >
-            Submit
-          </ButtonWithBackground>
+          {submitButtom}
         </KeyboardAvoidingView>
       </ImageBackground>
     );
@@ -260,11 +267,16 @@ const styles = StyleSheet.create({
   },
 })
 
+const mapStateToProps = state => {
+  return {
+    isLoading: state.ui.isLoading
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onLogin: (authData) => dispatch(tryAuth(authData)) 
-  }
-}
+  };
+};
 
-export default connect(null, mapDispatchToProps)(AuthScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthScreen);
