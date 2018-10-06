@@ -16,11 +16,6 @@ export const addPlace = (placeName, location, image) => {
         image: image.base64
       })
     })
-    .catch(err => {
-      console.log("Places - First Fetch Error: ", err);
-      alert("Something went wrong =[ Please try again!");
-      dispatch(uiStopLoading());
-    })
     .then(res => res.json())
     .then(parsedRes => {
       // If initial Image POST is successful, POST the additional place properties to Database
@@ -35,13 +30,18 @@ export const addPlace = (placeName, location, image) => {
       })
     })
     .catch(err => {
-      console.log("Places - Second Fetch Error: ", err);
+      console.log("Places - First Fetch Error: ", err);
       alert("Something went wrong =[ Please try again!");
       dispatch(uiStopLoading());
     })
     .then(res => res.json())
     .then(parsedRes => {
       console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
+      dispatch(uiStopLoading());
+    })
+    .catch(err => {
+      console.log("Places - Second Fetch Error: ", err);
+      alert("Something went wrong =[ Please try again!");
       dispatch(uiStopLoading());
     });
   };
@@ -53,11 +53,6 @@ export const getPlaces = () => {
   return dispatch => {
     // insert uiStartLoading()
     fetch(FIREBASE_PLACES_DB)
-    .catch(err => {
-      console.log("Error while fetching places from Firebase DB: ", err)
-      alert("Sorry =[ Something went wrong. Try again =]")
-      // insert uiStopLoading()
-    })
     .then(res => res.json())
     .then(parsedRes => {
       console.log("PARSE RES PLACES LIST: ", parsedRes);
@@ -74,7 +69,12 @@ export const getPlaces = () => {
       console.log("getPlaces Action PLACES LIST: ", places);
       dispatch(setPlaces(places));
     })
-  }
+    .catch(err => {
+      console.log("Error while fetching places from Firebase DB: ", err)
+      alert("Sorry =[ Something went wrong. Try again =]")
+      // insert uiStopLoading()
+    })
+  };
 };
 
 export const setPlaces = places => {
@@ -98,13 +98,13 @@ export const deletePlace = key => {
     fetch(deleteID, {
       method: "DELETE",
     })
-    .catch(err => {
-      console.log("Error when deleting Place", err);
-      alert("Sorry, something went wrong =[ try again!");
-    })
     .then(res => res.json())
     .then(parsedRes => {
       console.log("Successfully deleted from Firebase DB!", parsedRes);
+    })
+    .catch(err => {
+      console.log("Error when deleting Place", err);
+      alert("Sorry, something went wrong =[ try again!");
     });
   };
 };
