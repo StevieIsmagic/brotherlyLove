@@ -10,8 +10,6 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-
-import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
@@ -81,7 +79,6 @@ class AuthScreen extends Component {
       password: this.state.controls.password.value
     }
     this.props.onLogin(authData);
-    startMainTabs();
   }
 
   updateInputState = (key, value) => {

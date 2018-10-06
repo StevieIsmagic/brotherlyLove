@@ -1,6 +1,7 @@
 import { TRY_AUTH } from './actionTypes';
 import { AUTH_API_KEY } from 'react-native-dotenv';
 import { uiStartLoading, uiStopLoading } from './index';
+import startMainTabs from '../../screens/MainTabs/startMainTabs';
  
 export const tryAuth = authData => {
   return dispatch => {
@@ -31,8 +32,15 @@ export const authSignUp = authData => {
     })
     .then(res => res.json())
     .then(parsedRes => {
-      console.log("AUTH SUCCESS PARSED RES: ", parsedRes);
       dispatch(uiStopLoading());
+      if (parsedRes.error) {
+        let errorMessage = parsedRes.error.message
+        alert("LOGIN FAILURE:  " + errorMessage);
+        console.log("Then Block - Error Object: ", parsedRes.error)
+      } else {
+        startMainTabs()
+        console.log("AUTH SUCCESS PARSED RES: ", parsedRes);
+      }
     })
 
   }
