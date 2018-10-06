@@ -73,12 +73,12 @@ class AuthScreen extends Component {
     });
   }
 
-  loginHandler = () => {
+  authHandler = () => {
     const authData = {
       email: this.state.controls.email.value,
       password: this.state.controls.password.value
     }
-    this.props.onLogin(authData);
+    this.props.onTryAuth(authData, this.state.authMode);
   }
 
   updateInputState = (key, value) => {
@@ -126,8 +126,8 @@ class AuthScreen extends Component {
     let confirmPasswordControl = null;
     let submitButtom = (
       <ButtonWithBackground 
-        color='#f6b12d' 
-        onPress={this.loginHandler}
+        color='#512c6c' 
+        onPress={this.authHandler}
         disabled={
           (!this.state.controls.confirmPassword.valid && this.state.authMode === 'signup') || 
           !this.state.controls.email.valid ||
@@ -141,7 +141,7 @@ class AuthScreen extends Component {
     if (this.state.viewMode === 'portrait') {
       headingText = (
         <MainText>
-          <HeadingText> Welcome Brother </HeadingText>
+          <HeadingText> Alumni Directory </HeadingText>
         </MainText>
       );
     }
@@ -176,7 +176,7 @@ class AuthScreen extends Component {
         <KeyboardAvoidingView style={styles.container} behavior='padding'>
           {headingText}
           <ButtonWithBackground 
-            color='#f6b12d' 
+            color = '#512c6c'
             onPress={this.switchAuthModeHandler}
           >
               Switch To {this.state.authMode === 'login' ? 'Sign Up' : 'Login'}
@@ -272,7 +272,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLogin: (authData) => dispatch(tryAuth(authData)) 
+    onTryAuth: (authData, authMode) => dispatch(tryAuth(authData, authMode)) 
   };
 };
 

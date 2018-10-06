@@ -7,7 +7,7 @@ import { getPlaces } from '../../store/actions/index';
 class FindPlaceScreen extends Component {
   // style top left hamburger nav button
   static navigatorStyle = {
-    navBarButtonColor: '#f6b12d'
+    navBarButtonColor: '#512c6c'
   }
 
   state = {
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     borderColor: 'black',
-    backgroundColor: '#f6b12d',
+    backgroundColor: '#512c6c',
     borderWidth: 1,
     borderRadius: 50,
     padding: 20

@@ -13,7 +13,7 @@ import validate from '../../utility/validation';
 class SharePlaceScreen extends Component {
   // style top left hamburger nav button
   static navigatorStyle = {
-    navBarButtonColor: '#f6b12d'
+    navBarButtonColor: '#512c6c'
   }
 
   state = {

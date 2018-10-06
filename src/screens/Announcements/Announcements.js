@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 class AnnouncementsScreen extends Component {
   // style top left hamburger nav button
   static navigatorStyle = {
-    navBarButtonColor: '#f6b12d'
+    navBarButtonColor: '#512c6c'
   }
 
   constructor(props) {
