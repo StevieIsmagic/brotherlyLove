@@ -14,7 +14,7 @@ const startTabs = () => {
         {
           screen: 'brotherlylove.FindPlaceScreen',
           label: 'Find Brothers',
-          title: 'Find SigEp Brothers',
+          title: 'Find Brothers',
           icon: sources[0],
           navigatorButtons: {
             leftButtons: [
