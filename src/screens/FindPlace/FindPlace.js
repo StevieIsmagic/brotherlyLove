@@ -26,10 +26,6 @@ class FindPlaceScreen extends Component {
     console.log("FIND PLACE AFTER CDM: ", this.state);
   }
 
-  shouldComponentUpdate() {
-    return true;
-  }
-
   onNavigatorEvent = event => {
     console.log(event);
     if (event.type === 'NavBarButtonPress') {
