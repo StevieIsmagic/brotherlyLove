@@ -1,6 +1,6 @@
 import { SET_PLACES, REMOVE_PLACE, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
 import { FIREBASE_PLACES_DB, FIREBASE_PLACES_DB_SPLICED, FIREBASE_ADDIMAGE_FX } from 'react-native-dotenv';
-import { uiStartLoading, uiStopLoading } from './index';
+import { uiStartLoading, uiStopLoading, authGetToken } from './index';
 
 /* 
 ACTION CREATORS > RETURN AN OBJECT
@@ -8,14 +8,22 @@ When returning ASYNC code, Use Redux-Thunk dispatch
 */
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
-    dispatch(uiStartLoading())
-    // Upload Image to Firebase Storage via Firebase f(x)
-    fetch(FIREBASE_ADDIMAGE_FX, {
-      method: "POST",
-      body: JSON.stringify({
-        image: image.base64
+    dispatch(uiStartLoading());
+    dispatch(authGetToken())
+      .catch(err => {
+        alert("No valid token found when adding place.");
       })
-    })
+      .then(token => {
+        return fetch(FIREBASE_ADDIMAGE_FX, 
+          {
+            method: "POST",
+            body: JSON.stringify({
+              image: image.base64
+            })
+          }
+        )
+      })
+    // Upload Image to Firebase Storage via Firebase f(x)
     .then(res => res.json())
     .then(parsedRes => {
       // If initial Image POST is successful, POST the additional place properties to Database
@@ -51,8 +59,13 @@ export const getPlaces = () => {
 // Reach out to Firebase backend and get places object
 // Thunk dispatch returns a function
   return dispatch => {
-    // insert uiStartLoading()
-    fetch(FIREBASE_PLACES_DB)
+    dispatch(authGetToken())
+      .then(token => {
+        return fetch(FIREBASE_PLACES_DB + token)
+      })
+      .catch(() => {
+        alert("No Valid Token Found!");
+      })
     .then(res => res.json())
     .then(parsedRes => {
       console.log("PARSE RES PLACES LIST: ", parsedRes);
@@ -71,7 +84,7 @@ export const getPlaces = () => {
     })
     .catch(err => {
       console.log("Error while fetching places from Firebase DB: ", err)
-      alert("Sorry =[ Something went wrong. Try again =]")
+      alert("Sorry =[ Something went wrong while fetching places. Try again =]")
       // insert uiStopLoading()
     })
   };
@@ -86,17 +99,26 @@ export const setPlaces = places => {
 
 export const deletePlace = key => {
   // dispatch allows us to run async code
-  const deleteID = FIREBASE_PLACES_DB_SPLICED + key + ".json";
   return dispatch => {
     /*
-      NOTE: dispatch(removePlace()) deletes place from redux store before the fetch(DELETE) call.
-      Consider what may happen if the client removal succeeds + server removal fails.
-      We will then have an out of sync frontend store. Maybe make copy of place and if catch
-      block is entered, add place back to store. 
+    NOTE: dispatch(removePlace()) deletes place from redux store before the fetch(DELETE) call.
+    Consider what may happen if the client removal succeeds + server removal fails.
+    We will then have an out of sync frontend store. Maybe make copy of place and if catch
+    block is entered, add place back to store. 
     */
-    dispatch(removePlace(key));
-    fetch(deleteID, {
-      method: "DELETE",
+   dispatch(authGetToken())
+    .catch(() => {
+     alert("No valid token found when deleting.");
+    })
+    .then(token => {
+      const deleteID = FIREBASE_PLACES_DB_SPLICED + key + ".json?auth=" + token;
+      dispatch(removePlace(key));
+      return fetch(
+        deleteID, 
+        {
+        method: "DELETE",
+        }
+      )
     })
     .then(res => res.json())
     .then(parsedRes => {
