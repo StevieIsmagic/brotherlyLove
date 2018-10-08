@@ -42,7 +42,7 @@ export const tryAuth = (authData, authMode) => {
         alert("LOGIN FAILURE:  " + errorMessage);
         console.log("Then Block - Error Object: ", parsedRes.error)
       } else {
-        dispatch(authStoreToken(parsedRes.idToken))
+        dispatch(authStoreToken(parsedRes.idToken, parsedRes.expiresIn))
         startMainTabs()
         console.log("AUTH SUCCESS PARSED RES: ", parsedRes);
       }
@@ -50,10 +50,14 @@ export const tryAuth = (authData, authMode) => {
   }
 };
 
-export const authStoreToken = token => {
+export const authStoreToken = (token, expiresIn) => {
   return dispatch => {
     dispatch(authSetToken(token));
-    AsyncStorage.setItem("brotherlyLove:auth:token", token)
+    const now = new Date();
+    const expiryDate = now.getTime() + expiresIn * 1000;
+    console.log("TOKEN EXPIRATION:", now, new Date(expiryDate)); 
+    AsyncStorage.setItem("brotherlyLove:auth:token", token);
+    AsyncStorage.setItem("brotherlyLove:auth:expiryDate", expiryDate.toString());
   }
 };
 
@@ -69,19 +73,34 @@ export const authGetToken = () => {
     const promise = new Promise((resolve, reject) => {
       const token = getState().auth.token;
       if (!token) {
+        let fetchedToken;
         AsyncStorage.getItem("brotherlyLove:auth:token")
           .catch(err => reject())
           .then(tokenFromStorage => {
+            fetchedToken = tokenFromStorage;
             if (!tokenFromStorage) {
               reject();
               return;
             }
-            dispatch(authSetToken(tokenFromStorage));
-            resolve(tokenFromStorage);
-          });
+            return AsyncStorage.getItem("brotherlyLove:auth:expiryDate");
+          })
+          .then(expiryDate => {
+            const parsedExpiryDate = new Date(parseInt(expiryDate));
+            const now = new Date();
+            if (parsedExpiryDate > now) {
+              dispatch(authSetToken(fetchedToken));
+              resolve(fetchedToken);
+            } else {
+                reject();
+            }
+          })
+          .catch(err => reject())
       } else {
         resolve(token);
       }
+    });
+    promise.catch(err => {
+      dispatch(authClearStorage());
     });
     return promise;
   };
@@ -94,6 +113,13 @@ export const authAutoSignIn = () => {
       startMainTabs();
     })
     .catch(err => console.log("Faild to fetch token for reSignIn!"));
+  };
+};
+
+export const authClearStorage = () => {
+  return dispatch => {
+    AsyncStorage.removeItem("brotherlyLove:auth:token");
+    AsyncStorage.removeItem("brotherlyLove:auth:expiryDate");
   };
 };
 
