@@ -53,7 +53,7 @@ export const tryAuth = (authData, authMode) => {
 export const authStoreToken = token => {
   return dispatch => {
     dispatch(authSetToken(token));
-    AsyncStorage.setItem("BrotherlyLove:auth:token", token)
+    AsyncStorage.setItem("brotherlyLove:auth:token", token)
   }
 };
 
@@ -69,7 +69,16 @@ export const authGetToken = () => {
     const promise = new Promise((resolve, reject) => {
       const token = getState().auth.token;
       if (!token) {
-        reject();
+        AsyncStorage.getItem("brotherlyLove:auth:token")
+          .catch(err => reject())
+          .then(tokenFromStorage => {
+            if (!tokenFromStorage) {
+              reject();
+              return;
+            }
+            dispatch(authSetToken(tokenFromStorage));
+            resolve(tokenFromStorage);
+          });
       } else {
         resolve(token);
       }
@@ -78,4 +87,13 @@ export const authGetToken = () => {
   };
 };
 
+export const authAutoSignIn = () => {
+  return dispatch => {
+    dispatch(authGetToken())
+    .then(token => {
+      startMainTabs();
+    })
+    .catch(err => console.log("Faild to fetch token for reSignIn!"));
+  };
+};
 
