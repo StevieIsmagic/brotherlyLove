@@ -42,7 +42,7 @@ export const tryAuth = (authData, authMode) => {
         alert("LOGIN FAILURE:  " + errorMessage);
         console.log("Then Block - Error Object: ", parsedRes.error)
       } else {
-        dispatch(authStoreToken(parsedRes.idToken, parsedRes.expiresIn))
+        dispatch(authStoreToken(parsedRes.idToken, parsedRes.expiresIn, parsedRes.refreshToken))
         startMainTabs()
         console.log("AUTH SUCCESS PARSED RES: ", parsedRes);
       }
@@ -50,14 +50,15 @@ export const tryAuth = (authData, authMode) => {
   }
 };
 
-export const authStoreToken = (token, expiresIn) => {
+export const authStoreToken = (token, expiresIn, refreshToken) => {
   return dispatch => {
     dispatch(authSetToken(token));
     const now = new Date();
     const expiryDate = now.getTime() + expiresIn * 1000;
     console.log("TOKEN EXPIRATION:", now, new Date(expiryDate)); 
     AsyncStorage.setItem("brotherlyLove:auth:token", token);
-    AsyncStorage.setItem("brotherlyLove:auth:expiryDate", expiryDate.toString());
+    // AsyncStorage.setItem("brotherlyLove:auth:expiryDate", expiryDate.toString());
+    AsyncStorage.setItem("brotherlyLove:auth:refreshToken", refreshToken);
   }
 };
 
@@ -99,10 +100,42 @@ export const authGetToken = () => {
         resolve(token);
       }
     });
-    promise.catch(err => {
-      dispatch(authClearStorage());
+    return promise
+      .catch(err => {
+        return AsyncStorage.getItem("brotherlyLove:auth:refreshToken")
+        .then(refreshToken => {
+          return fetch("https://securetoken.googleapis.com/v1/token?key=" + AUTH_API_KEY,{
+            method: "POST",
+            headers: {
+              "Content-Type" : "application/x-www-form-urlencoded"
+            },
+            body: "grant_type=refresh_token&refresh_token=" + refreshToken
+          });
+        })
+        .then(res => res.json())
+        .then(parsedRes => {
+          if (parsedRes.id_token) {
+            console.log("Refresh token worked.");
+            dispatch(
+              authStoreToken(
+                parsedRes.id_token, 
+                parsedRes.expires_in, 
+                parsedRes.refresh_token
+              )
+            );
+            return parsedRes.id_token;
+          } else {
+            dispatch(authClearStorage());
+          }
+        });
+    })
+    .then(token => {
+      if (!token) {
+        throw(new Error());
+      } else {
+        return token;
+      }
     });
-    return promise;
   };
 };
 
