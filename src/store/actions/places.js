@@ -8,20 +8,30 @@ When returning ASYNC code, Use Redux-Thunk dispatch
 */
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
+    let authToken;
     dispatch(uiStartLoading());
     dispatch(authGetToken())
       .catch(err => {
         alert("No valid token found when adding place.");
       })
       .then(token => {
+        authToken = token;
         return fetch(FIREBASE_ADDIMAGE_FX, 
           {
             method: "POST",
             body: JSON.stringify({
               image: image.base64
-            })
+            }),
+            headers: {
+              "Authorization": "Bearer " + authToken
+            }
           }
         )
+      })
+      .catch(err => {
+        console.log("Places - First Fetch Error: ", err);
+        alert("Something went wrong =[ Please try again!");
+        dispatch(uiStopLoading());
       })
     // Upload Image to Firebase Storage via Firebase f(x)
     .then(res => res.json())
@@ -32,15 +42,10 @@ export const addPlace = (placeName, location, image) => {
         location: location,
         image: parsedRes.imageUrl
       };
-      return fetch(FIREBASE_PLACES_DB, {
+      return fetch(FIREBASE_PLACES_DB + authToken, {
         method: "POST",
         body: JSON.stringify(placeData)
       })
-    })
-    .catch(err => {
-      console.log("Places - First Fetch Error: ", err);
-      alert("Something went wrong =[ Please try again!");
-      dispatch(uiStopLoading());
     })
     .then(res => res.json())
     .then(parsedRes => {

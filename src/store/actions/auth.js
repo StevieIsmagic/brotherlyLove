@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import { TRY_AUTH, AUTH_SET_TOKEN } from './actionTypes';
 import { AUTH_API_KEY } from 'react-native-dotenv';
 import { uiStartLoading, uiStopLoading } from './index';
@@ -41,11 +42,18 @@ export const tryAuth = (authData, authMode) => {
         alert("LOGIN FAILURE:  " + errorMessage);
         console.log("Then Block - Error Object: ", parsedRes.error)
       } else {
-        dispatch(authSetToken(parsedRes.idToken))
+        dispatch(authStoreToken(parsedRes.idToken))
         startMainTabs()
         console.log("AUTH SUCCESS PARSED RES: ", parsedRes);
       }
     })
+  }
+};
+
+export const authStoreToken = token => {
+  return dispatch => {
+    dispatch(authSetToken(token));
+    AsyncStorage.setItem("BrotherlyLove:auth:token", token)
   }
 };
 
