@@ -1,8 +1,10 @@
 import { AsyncStorage } from 'react-native';
-import { TRY_AUTH, AUTH_SET_TOKEN } from './actionTypes';
+import { Navigation } from 'react-native-navigation';
+import { TRY_AUTH, AUTH_SET_TOKEN, AUTH_REMOVE_TOKEN } from './actionTypes';
 import { AUTH_API_KEY } from 'react-native-dotenv';
 import { uiStartLoading, uiStopLoading } from './index';
 import startMainTabs from '../../screens/MainTabs/startMainTabs';
+import App from '../../../App';
  
 export const tryAuth = (authData, authMode) => {
   return dispatch => {
@@ -153,6 +155,27 @@ export const authClearStorage = () => {
   return dispatch => {
     AsyncStorage.removeItem("brotherlyLove:auth:token");
     AsyncStorage.removeItem("brotherlyLove:auth:expiryDate");
+    return AsyncStorage.removeItem("brotherlyLove:auth:refreshToken");
   };
 };
 
+export const authLogout = () => {
+  return dispatch => {
+    dispatch(authClearStorage())
+      .then(() => {
+        Navigation.startSingleScreenApp({
+          screen: {
+            screen: 'brotherlylove.AuthScreen',
+            title: 'Login'
+          }
+        });
+      });
+    dispatch(authRemoveToken());
+  };
+};
+
+export const authRemoveToken = () => {
+  return {
+    type: AUTH_REMOVE_TOKEN
+  };
+};

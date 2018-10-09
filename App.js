@@ -25,4 +25,4 @@ Navigation.startSingleScreenApp({
     screen: 'brotherlylove.AuthScreen',
     title: 'Login'
   }
-})
+});
