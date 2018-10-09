@@ -42,6 +42,33 @@ class SharePlaceScreen extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent)
   }
 
+  componentWillMount() {
+    this.resetState();
+  }
+
+  resetState = () => {
+    this.setState({
+      controls: {
+        placeName: {
+          value: '',
+          valid: false,
+          touched: false,
+          validationRules: {
+            notEmpty: true
+          }
+        },
+        location: {
+          value: null,
+          valid: false
+        },
+        image: {
+          value: null,
+          valid: false
+        }
+      }
+    })
+  }
+
   onNavigatorEvent = event => {
     console.log(event);
     if (event.type === 'NavBarButtonPress') {
@@ -71,13 +98,14 @@ class SharePlaceScreen extends Component {
   }
 
   placeAddedHandler = () => {
-    // if (this.state.controls.placeName.value.trim() !== '') {
       this.props.onAddPlace(
         this.state.controls.placeName.value,
         this.state.controls.location.value,
         this.state.controls.image.value
       );
-    // }
+      this.resetState();
+      this.imagePicker.resetState();
+      this.locationPicker.resetState();
   }
 
   locationPickedHandler = location => {
@@ -133,8 +161,14 @@ class SharePlaceScreen extends Component {
           <MainText>
             <HeadingText>Where You At?</HeadingText>
           </MainText>
-          <PickImage onImagePicked={this.imagePickedHandler} />
-          <PickLocation onLocationPick={this.locationPickedHandler} />
+          <PickImage 
+            onImagePicked={this.imagePickedHandler} 
+            ref={ref => this.imagePicker = ref} 
+          />
+          <PickLocation 
+            onLocationPick={this.locationPickedHandler} 
+            ref={ref => this.locationPicker = ref} 
+          />
           <PlaceInput 
             placeData={this.state.controls.placeName} 
             onChangeText={this.placeNameChangedHandler}

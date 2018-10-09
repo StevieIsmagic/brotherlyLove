@@ -16,6 +16,23 @@ class PickLocation extends Component {
     locationChosen: false
   };
 
+  componentWillMount() {
+    this.resetState()
+  }
+
+  resetState = () => {
+    this.setState({
+      focusedLocation: {
+        latitude: 25.96,
+        longitude: -80.238892,
+        latitudeDelta: 0.0122,
+        longitudeDelta: Dimensions.get('window').width /
+          Dimensions.get('window').height * 0.0122
+      },
+      locationChosen: false
+    });
+  }
+
   picklLocationHandler = event => {
     const coordinates = event.nativeEvent.coordinate;
     this.map.animateToRegion({
