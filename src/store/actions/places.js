@@ -1,4 +1,4 @@
-import { SET_PLACES, REMOVE_PLACE, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
+import { START_ADD_PLACE, SET_PLACES, REMOVE_PLACE, PLACE_ADDED, SELECT_PLACE, DESELECT_PLACE } from './actionTypes';
 import { FIREBASE_PLACES_DB, FIREBASE_PLACES_DB_SPLICED, FIREBASE_ADDIMAGE_FX } from 'react-native-dotenv';
 import { uiStartLoading, uiStopLoading, authGetToken } from './index';
 
@@ -6,6 +6,12 @@ import { uiStartLoading, uiStopLoading, authGetToken } from './index';
 ACTION CREATORS > RETURN AN OBJECT
 When returning ASYNC code, Use Redux-Thunk dispatch 
 */
+export const startAddPlace = () => {
+  return {
+    type: START_ADD_PLACE
+  };
+};
+
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
     let authToken;
@@ -51,12 +57,19 @@ export const addPlace = (placeName, location, image) => {
     .then(parsedRes => {
       console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
       dispatch(uiStopLoading());
+      dispatch(placeAdded());
     })
     .catch(err => {
       console.log("Places - Second Fetch Error: ", err);
       alert("Something went wrong =[ Please try again!");
       dispatch(uiStopLoading());
     });
+  };
+};
+
+export const placeAdded = () => {
+  return {
+    type: PLACE_ADDED
   };
 };
 
