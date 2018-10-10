@@ -29,10 +29,14 @@ class AnnouncementsScreen extends Component {
       <View>
         <Text>Announcements Screen ! :)</Text>
         <Text>
+          This Fraternity Will Be Different.
           Think of advertizing opportunities for brothers and their personal initiatives. 
           For example, right now a FlNu initiative is trying to raise money.
           Maybe create a directory of brother owned establishments.
           How can we better leverage the SigEp Community?
+          Directory - Rolodex
+          Brother profile with business / contact information
+          Sort by business category / location
         </Text>
       </View>
     )
