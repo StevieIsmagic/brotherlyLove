@@ -35,12 +35,19 @@ export const addPlace = (placeName, location, image) => {
         )
       })
       .catch(err => {
+        // will only catch network errors - not 400 / 500 error codes
         console.log("Places - First Fetch Error: ", err);
         alert("Something went wrong =[ Please try again!");
         dispatch(uiStopLoading());
       })
     // Upload Image to Firebase Storage via Firebase f(x)
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw(new Error());
+      }
+    })
     .then(parsedRes => {
       // If initial Image POST is successful, POST the additional place properties to Database
       const placeData = {
@@ -53,7 +60,13 @@ export const addPlace = (placeName, location, image) => {
         body: JSON.stringify(placeData)
       })
     })
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw(new Error());
+      }
+    })
     .then(parsedRes => {
       console.log("SECOND PROMISE PARSED RESPONSE: ", parsedRes);
       dispatch(uiStopLoading());
@@ -84,7 +97,13 @@ export const getPlaces = () => {
       .catch(() => {
         alert("No Valid Token Found!");
       })
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw (new Error());
+      }
+    })
     .then(parsedRes => {
       console.log("PARSE RES PLACES LIST: ", parsedRes);
       const places = [];
@@ -138,7 +157,13 @@ export const deletePlace = key => {
         }
       )
     })
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw (new Error());
+      }
+    })
     .then(parsedRes => {
       console.log("Successfully deleted from Firebase DB!", parsedRes);
     })
