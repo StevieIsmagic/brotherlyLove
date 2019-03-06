@@ -31,10 +31,10 @@ class SharePlaceScreen extends Component {
         value: null,
         valid: false
       },
-      image: {
-        value: null,
-        valid: false
-      }
+      // image: {
+      //   value: null,
+      //   valid: false
+      // }
     }
   };
 
@@ -62,10 +62,10 @@ class SharePlaceScreen extends Component {
           value: null,
           valid: false
         },
-        image: {
-          value: null,
-          valid: false
-        }
+        // image: {
+        //   value: null,
+        //   valid: false
+        // }
       }
     });
   };
@@ -114,10 +114,10 @@ class SharePlaceScreen extends Component {
       this.props.onAddPlace(
         this.state.controls.placeName.value,
         this.state.controls.location.value,
-        this.state.controls.image.value
+        // this.state.controls.image.value
       );
       this.resetState();
-      this.imagePicker.resetState();
+      // this.imagePicker.resetState();
       this.locationPicker.resetState();
   }
 
@@ -136,19 +136,19 @@ class SharePlaceScreen extends Component {
     });
   }
 
-  imagePickedHandler = image => {
-    this.setState(prevState => {
-      return {
-        controls: {
-          ...prevState.controls,
-          image: {
-            value: image,
-            valid: true
-          }
-        }
-      }
-    });
-  }
+  // imagePickedHandler = image => {
+  //   this.setState(prevState => {
+  //     return {
+  //       controls: {
+  //         ...prevState.controls,
+  //         image: {
+  //           value: image,
+  //           valid: true
+  //         }
+  //       }
+  //     }
+  //   });
+  // }
 
   render() {
     let submitButton = (
@@ -157,8 +157,8 @@ class SharePlaceScreen extends Component {
         onPress={this.placeAddedHandler}
         disabled={
           !this.state.controls.placeName.valid ||
-          !this.state.controls.location.valid ||
-          !this.state.controls.image.valid
+          !this.state.controls.location.valid 
+          // || !this.state.controls.image.valid
         }
       />
     );
@@ -174,10 +174,10 @@ class SharePlaceScreen extends Component {
           <MainText>
             <HeadingText>Where You At?</HeadingText>
           </MainText>
-          <PickImage 
+          {/* <PickImage 
             onImagePicked={this.imagePickedHandler} 
             ref={ref => this.imagePicker = ref} 
-          />
+          /> */}
           <PickLocation 
             onLocationPick={this.locationPickedHandler} 
             ref={ref => this.locationPicker = ref} 
@@ -211,10 +211,10 @@ const styles = StyleSheet.create({
    button: {
     margin: 8
    },
-   previewImage: {
-     width: '100%',
-    height: '100%'
-  }
+  //  previewImage: {
+  //    width: '100%',
+  //   height: '100%'
+  // }
 });
 
 const mapStateToProps = state => {
@@ -226,7 +226,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: (placeName, location, image) => dispatch(addPlace(placeName, location, image)),
+    onAddPlace: (placeName, location) => dispatch(addPlace(placeName, location)),
     onStartAddPlace: () => dispatch(startAddPlace())
   };
 };

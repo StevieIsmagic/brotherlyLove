@@ -20,40 +20,41 @@ export const addPlace = (placeName, location, image) => {
       .catch(err => {
         alert("No valid token found when adding place.");
       })
-      .then(token => {
-        authToken = token;
-        return fetch(FIREBASE_ADDIMAGE_FX, 
-          {
-            method: "POST",
-            body: JSON.stringify({
-              image: image.base64
-            }),
-            headers: {
-              "Authorization": "Bearer " + authToken
-            }
-          }
-        )
-      })
-      .catch(err => {
-        // will only catch network errors - not 400 / 500 error codes
-        console.log("Places - First Fetch Error: ", err);
-        alert("Something went wrong =[ Please try again!");
-        dispatch(uiStopLoading());
-      })
-    // Upload Image to Firebase Storage via Firebase f(x)
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw(new Error());
-      }
-    })
+    //   // IMAGE upload to firebase from Share place screen
+    //   .then(token => {
+    //     authToken = token;
+    //     return fetch(FIREBASE_ADDIMAGE_FX, 
+    //       {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //           image: image.base64
+    //         }),
+    //         headers: {
+    //           "Authorization": "Bearer " + authToken
+    //         }
+    //       }
+    //     )
+    //   })
+    //   .catch(err => {
+    //     // will only catch network errors - not 400 / 500 error codes
+    //     console.log("Places - First Fetch Error: ", err);
+    //     alert("Something went wrong =[ Please try again!");
+    //     dispatch(uiStopLoading());
+    //   })
+    // // Upload Image to Firebase Storage via Firebase f(x)
+    // .then(res => {
+    //   if (res.ok) {
+    //     return res.json();
+    //   } else {
+    //     throw(new Error());
+    //   }
+    // })
     .then(parsedRes => {
       // If initial Image POST is successful, POST the additional place properties to Database
       const placeData = {
         name: placeName,
         location: location,
-        image: parsedRes.imageUrl
+        // image: parsedRes.imageUrl
       };
       return fetch(FIREBASE_PLACES_DB + authToken, {
         method: "POST",
@@ -110,9 +111,9 @@ export const getPlaces = () => {
       for (let key in parsedRes) {
         places.push({
           ...parsedRes[key],
-          image: {
-            uri: parsedRes[key].image
-          },
+          // image: {
+          //   uri: parsedRes[key].image
+          // },
           key: key
         });
       }
